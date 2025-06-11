@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohammad Hadi | Video Editor Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"> 
+  <style>
+    :root {
+      --bg-main: radial-gradient(circle at top left, #710073, #002255);
+      --primary: #e63946;
+      --text: #f1faee;
+      --accent: #67c6c9;
+      --highlight: #1d76ac;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-main);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5rem 10%;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .header-left {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .header-left h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .header-left h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--highlight);
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .header-left button {
+      margin-top: 1.5rem;
+      margin-right: 1rem;
+      padding: 0.85rem 1.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      background-color: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .header-left button:hover {
+      background-color: #d946ef;
+    }
+
+    .profile-pic {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: visible;
+      border: 4px solid var(--primary);
+      box-shadow: 0 0 15px 5px var(--primary);
+      flex-shrink: 0;
+      animation: glowPulse 3s ease-in-out infinite;
+      background: transparent;
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      pointer-events: none;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        box-shadow: 0 0 15px 5px var(--primary);
+      }
+      50% {
+        box-shadow: 0 0 30px 10px var(--primary);
+      }
+    }
+
+    section {
+      padding: 4rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2.section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.2rem;
+      color: var(--primary);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .video {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 ratio */
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video:hover {
+      transform: scale(1.04);
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: #f3f3f3;
+      font-size: 0.9rem;
+    }
+
+    .hire-btn {
+      display: inline-block;
+      margin-top: 0;
+      background-color: #1d9bf0;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.75rem 1.75rem;
+      border-radius: 999px;
+      transition: background-color 0.3s ease;
+    }
+
+    .hire-btn:hover {
+      background-color: #0c7bdc;
+    }
+
+    /* MOBILE STYLES */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 3rem 1rem;
+      }
+
+      .profile-pic {
+        order: -1;
+        margin-bottom: 2rem;
+        width: 160px;
+        height: 160px;
+      }
+
+      .header-left h1 {
+        font-size: 2.2rem;
+      }
+
+      .header-left h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .header-left button {
+        margin-top: 1rem;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #hire img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="profile-pic">
+      <img src="profile.png" alt="Mohammad Hadi">
+    </div>
+    <div class="header-left">
+      <h1>Hey, I Am Mohammad Hadi!</h1>
+      <h2>Professional Video Editor</h2>
+      <h2>Visual Storyteller</h2>
+      <button onclick="document.getElementById('videos').scrollIntoView({ behavior: 'smooth' });">
+        See My Work
+      </button>
+      <button onclick="document.getElementById('hire').scrollIntoView({ behavior: 'smooth' });">
+        Hire Me
+      </button>
+    </div>
+  </header>
+
+  <section id="videos">
+    <h2 class="section-title">Sample Works</h2>
+    <div class="video-grid">
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/WSZkfKdQ-Fk" allowfullscreen></iframe>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/jmvc9uWBlfk" allowfullscreen></iframe>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="hire">
+    <h2 class="section-title">How to Hire Me :)</h2>
+    <div style="
+      text-align: center;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    ">
+      <p>Send Me A Message, My DMs Are Open.</p>
+      <img src="X logo.png" alt="X Logo" style="width: 100px; height: 100px; margin-top: 2rem; margin-bottom: 1rem;" />
+      <a href="https://twitter.com/your_handle" target="_blank" class="hire-btn">
+        Message Me on X
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Mohammad Hadi. All rights reserved.
+  </footer>
+
+</body>
+</html>
