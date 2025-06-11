@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"> 
   <style>
     :root {
-      --bg-main: radial-gradient(circle at top left, #710073, #002255);
       --primary: #e63946;
       --text: #f1faee;
       --accent: #67c6c9;
@@ -22,9 +21,17 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg-main);
+      background: linear-gradient(270deg, #710073, #002255, #1a1a2e);
+      background-size: 600% 600%;
+      animation: bgMove 60s ease infinite;
       color: var(--text);
       line-height: 1.6;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     header {
@@ -55,6 +62,9 @@
       border-left: 4px solid var(--accent);
       padding-left: 1rem;
       margin-bottom: 0.75rem;
+      background-color: #000;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
     }
 
     .header-left button {
@@ -170,7 +180,6 @@
       background-color: #0c7bdc;
     }
 
-    /* MOBILE STYLES */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
