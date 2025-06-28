@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mohammad Hadi | Video Editor Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="icon" href="Circle shaped Profile.png" type="image">
- <style>
+  <style>
     :root {
       --primary: #e63946;
       --text: #f1faee;
@@ -129,33 +129,83 @@
       color: var(--primary);
     }
 
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-      gap: 2.5rem;
+    .sample-container {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      max-width: 1400px;
+      margin: auto;
     }
 
-    .video {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%; /* 16:9 ratio */
-      border-radius: 14px;
+    .sample-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      flex-wrap: nowrap;
+    }
+
+    .sample-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .sample-video {
+      flex: 0 0 65%;
+      aspect-ratio: 16 / 9;
       overflow: hidden;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      background: #000;
       transition: transform 0.3s ease;
     }
 
-    .video iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .sample-video:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 50px rgba(230, 57, 70, 0.9);
+      z-index: 10;
+    }
+
+    .sample-video iframe {
       width: 100%;
       height: 100%;
       border: none;
+      display: block;
     }
 
-    .video:hover {
-      transform: scale(1.04);
+    .sample-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      color: #eee;
+      backdrop-filter: blur(12px);
+      text-align: left;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      border-left: 6px solid var(--accent);
+      min-width: 300px;
+    }
+
+    .sample-row.reverse .sample-info {
+      border-left: none;
+      border-right: 6px solid var(--accent);
+    }
+
+    .sample-info h3 {
+      font-size: 1.6rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .sample-info p {
+      font-size: 1.1rem;
+      color: #ddd;
+      line-height: 1.4;
+      font-weight: 500;
     }
 
     footer {
@@ -181,7 +231,34 @@
       background-color: #0c7bdc;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 950px) {
+      .sample-row,
+      .sample-row.reverse {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .sample-video {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .sample-info {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 1.5rem;
+        text-align: center;
+        border-left: 6px solid var(--accent);
+        border-right: none !important;
+      }
+
+      .sample-row.reverse .sample-info {
+        border-left: 6px solid var(--accent);
+        border-right: none !important;
+      }
+    }
+
+    @media (max-width: 600px) {
       header {
         flex-direction: column;
         align-items: center;
@@ -208,15 +285,6 @@
       .header-left button {
         margin-top: 1rem;
       }
-
-      .video-grid {
-        grid-template-columns: 1fr;
-      }
-
-      #hire img {
-        width: 70px;
-        height: 70px;
-      }
     }
   </style>
 </head>
@@ -241,19 +309,48 @@
 
   <section id="videos">
     <h2 class="section-title">Sample Works</h2>
-    <div class="video-grid">
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/-8dVIpI9Gu0" allowfullscreen></iframe>
+    <div class="sample-container">
+
+      <div class="sample-row">
+        <div class="sample-video">
+          <iframe src="https://www.youtube.com/embed/K-QS3K5lpLA" allowfullscreen></iframe>
+        </div>
+        <div class="sample-info">
+          <h3>Faceless Documentry Style Edit</h3>
+          <p>Made 100% in Premiere</p>
+        </div>
       </div>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/jmvc9uWBlfk" allowfullscreen></iframe>
+
+      <div class="sample-row reverse">
+        <div class="sample-video">
+          <iframe src="https://www.youtube.com/embed/IPIfispqij4" allowfullscreen></iframe> 
+        </div>
+        <div class="sample-info">
+          <h3>Free Trial Edit</h3>
+          <p>Gaming Videos</p>
+        </div>
       </div>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/K-QS3K5lpLA " allowfullscreen></iframe>
+
+      <div class="sample-row">
+        <div class="sample-video">
+          <iframe src="https://www.youtube.com/embed/jmvc9uWBlfk" allowfullscreen></iframe>
+        </div>
+        <div class="sample-info">
+          <h3>Montage style Editing</h3>
+          <p>Make Your Clips Serve A Purpose</p>
+        </div>
       </div>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/IPIfispqij4" allowfullscreen></iframe>
+
+      <div class="sample-row reverse">
+        <div class="sample-video">
+          <iframe src="https://www.youtube.com/embed/-8dVIpI9Gu0" allowfullscreen></iframe>
+        </div>
+        <div class="sample-info">
+          <h3>YouTube Video Remake</h3>
+          <p>Give Your Videos A New Identity!</p>
+        </div>
       </div>
+
     </div>
   </section>
 
