@@ -231,70 +231,115 @@
       background-color: #0c7bdc;
     }
 
+    /* Mobile Responsiveness */
     @media (max-width: 950px) {
       .sample-row,
       .sample-row.reverse {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
       }
 
       .sample-video {
         width: 100%;
-        max-width: 100%;
+        flex: none;
       }
 
       .sample-info {
         width: 100%;
-        max-width: 100%;
-        margin-top: 1.5rem;
         text-align: center;
-        border-left: 6px solid var(--accent);
-        border-right: none !important;
-      }
-
-      .sample-row.reverse .sample-info {
-        border-left: 6px solid var(--accent);
+        border-left: 6px solid var(--accent) !important;
         border-right: none !important;
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       header {
+        padding: 3rem 5%;
         flex-direction: column;
-        align-items: center;
         text-align: center;
-        padding: 3rem 1rem;
       }
 
-      .profile-pic {
-        order: -1;
-        margin-bottom: 2rem;
-        width: 160px;
-        height: 160px;
+      .header-left {
+        text-align: center;
       }
 
       .header-left h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
       }
 
       .header-left h2 {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.4rem;
+        display: inline-block;
+        margin: 0.5rem auto;
       }
 
       .header-left button {
-        margin-top: 1rem;
+        display: inline-block;
+        margin: 1rem 0.5rem;
+        padding: 0.75rem 1.5rem;
       }
 
-      .sample-video {
-        flex: none;
-        width: auto;
-        aspect-ratio: auto;
+      .profile-pic {
+        margin-bottom: 2rem;
+        width: 180px;
+        height: 180px;
       }
 
-      .sample-video iframe {
-        width: auto;
-        height: auto;
+      section {
+        padding: 3rem 1rem;
+      }
+
+      h2.section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .sample-container {
+        gap: 3rem;
+      }
+
+      .sample-info h3 {
+        font-size: 1.4rem;
+      }
+
+      .sample-info p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-left h1 {
+        font-size: 2rem;
+      }
+
+      .header-left h2 {
+        font-size: 1.2rem;
+      }
+
+      .header-left button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+
+      .profile-pic {
+        width: 150px;
+        height: 150px;
+      }
+
+      h2.section-title {
+        font-size: 1.8rem;
+      }
+
+      .sample-info {
+        padding: 1rem;
+      }
+
+      .sample-info h3 {
+        font-size: 1.3rem;
+      }
+
+      .sample-info p {
+        font-size: 0.95rem;
       }
     }
   </style>
