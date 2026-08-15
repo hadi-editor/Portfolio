@@ -4,15 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mohammad Hadi | Video Editor Portfolio</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="icon" href="Circle shaped Profile.png" type="image">
+
   <style>
+
     :root {
-      --primary: #0c0f90;
+      --primary: #ffffff;
       --text: #f1faee;
       --accent: #67c6c9;
       --highlight: #1d76ac;
+
+      /* Shared whitish-blue glow */
+      --hover-glow: rgba(180, 235, 255, 0.9);
+
+      /* Softer profile glow */
+      --hover-glow-soft: rgba(180, 235, 255, 0.60);
     }
+
 
     * {
       margin: 0;
@@ -20,419 +30,1258 @@
       box-sizing: border-box;
     }
 
+
+    /* =========================
+       BODY / BACKGROUND
+       ========================= */
+
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(270deg, #710073, #002255, #1a1a2e);
+
+      background: linear-gradient(
+        270deg,
+        #170018,
+        #001127,
+        #11111f,
+        #180018,
+        #00152b
+      );
+
       background-size: 600% 600%;
+
       animation: bgMove 60s ease infinite;
+
       color: var(--text);
+
       line-height: 1.6;
     }
 
+
     @keyframes bgMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+
     }
+
+
+    /* =========================
+       HEADER
+       ========================= */
 
     header {
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       padding: 5rem 10%;
+
       gap: 3rem;
+
       flex-wrap: wrap;
     }
 
+
     .header-left {
       flex: 1;
+
       min-width: 280px;
     }
 
+
+    /* =========================
+       MAIN HEADER TITLE
+       ========================= */
+
     .header-left h1 {
+
       font-size: 2.8rem;
+
       font-weight: 800;
-      color: var(--primary);
+
+      color: #ffffff;
+
       margin-bottom: 1rem;
+
+      text-shadow:
+        0 0 8px rgba(255,255,255,0.45),
+        0 2px 8px rgba(0,0,0,0.8);
     }
+
+
+    /* =====================================================
+       PROFESSIONAL VIDEO EDITOR / VISUAL STORYTELLER
+       ===================================================== */
 
     .header-left h2 {
+
       font-size: 1.6rem;
+
       font-weight: 600;
+
       color: var(--highlight);
-      border-left: 4px solid var(--accent);
-      padding-left: 1rem;
-      margin-bottom: 0.75rem;
+
       background-color: #000;
+
+      border-left: 4px solid var(--accent);
+
       padding: 0.5rem 1rem;
+
+      margin-bottom: 0.75rem;
+
       border-radius: 6px;
+
+      text-shadow:
+        0 2px 5px rgba(0,0,0,0.8);
     }
+
+
+    /* =========================
+       HEADER BUTTONS
+       ========================= */
 
     .header-left button {
+
       margin-top: 1.5rem;
+
       margin-right: 1rem;
+
       padding: 0.85rem 1.75rem;
+
       font-size: 1rem;
+
       font-weight: 600;
+
       background-color: var(--accent);
+
       color: #000;
+
       border: none;
+
       border-radius: 999px;
+
       cursor: pointer;
-      transition: background 0.3s ease;
+
+      transition:
+        background 0.3s ease,
+        transform 0.2s ease;
     }
+
 
     .header-left button:hover {
+
       background-color: #d946ef;
+
+      transform: translateY(-2px);
     }
 
+
+    /* =========================
+       PROFILE PICTURE
+       ========================= */
+
     .profile-pic {
+
       width: 220px;
+
       height: 220px;
+
       border-radius: 50%;
+
       overflow: visible;
-      border: 4px solid var(--primary);
-      box-shadow: 0 0 15px 5px var(--primary);
+
+      /* NO STROKE */
+
+      border: none;
+
+      box-shadow:
+        0 0 15px 5px var(--hover-glow-soft);
+
       flex-shrink: 0;
-      animation: glowPulse 3s ease-in-out infinite;
+
+      animation: glowPulse 12s ease-in-out infinite;
+
       background: transparent;
     }
 
+
     .profile-pic img {
+
       width: 100%;
+
       height: 100%;
+
       object-fit: cover;
+
       border-radius: 50%;
+
       display: block;
+
       pointer-events: none;
     }
 
+
+    /* =========================
+       PROFILE GLOW ANIMATION
+       ========================= */
+
     @keyframes glowPulse {
-      0%, 100% {
-        box-shadow: 0 0 15px 5px var(--primary);
+
+      0%,
+      100% {
+
+        box-shadow:
+          0 0 14px 4px rgba(180, 235, 255, 0.60);
       }
+
+
       50% {
-        box-shadow: 0 0 30px 10px var(--primary);
+
+        box-shadow:
+          0 0 22px 6px rgba(180, 235, 255, 0.82);
       }
+
     }
+
+
+    /* =========================
+       SECTIONS
+       ========================= */
 
     section {
+
       padding: 4rem 1rem;
+
       max-width: 1200px;
+
       margin: auto;
     }
+
+
+    /* =========================
+       SECTION TITLES
+       ========================= */
 
     h2.section-title {
+
       text-align: center;
+
       margin-bottom: 3rem;
+
       font-size: 2.2rem;
-      color: var(--primary);
+
+      color: #ffffff;
+
+      text-shadow:
+        0 0 8px rgba(255,255,255,0.45),
+        0 2px 8px rgba(0,0,0,0.8);
     }
 
+
+    /* =========================
+       SAMPLE CONTAINER
+       ========================= */
+
     .sample-container {
+
       display: flex;
+
       flex-direction: column;
+
       gap: 5rem;
+
       max-width: 1400px;
+
       margin: auto;
     }
 
+
+    /* =========================
+       NORMAL SAMPLE ROW
+       ========================= */
+
     .sample-row {
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       gap: 3rem;
+
       flex-wrap: nowrap;
     }
 
+
     .sample-row.reverse {
+
       flex-direction: row-reverse;
     }
 
+
+    /* =========================
+       NORMAL VIDEO
+       ========================= */
+
     .sample-video {
+
       flex: 0 0 65%;
+
       aspect-ratio: 16 / 9;
+
       overflow: hidden;
+
       border-radius: 12px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+
+      box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.5);
+
       background: #000;
-      transition: transform 0.3s ease;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
     }
 
+
     .sample-video:hover {
+
       transform: scale(1.03);
-      box-shadow: 0 0 50px rgba(230, 57, 70, 0.9);
+
+      box-shadow:
+        0 0 50px var(--hover-glow);
+
       z-index: 10;
     }
 
+
     .sample-video iframe {
+
       width: 100%;
+
       height: 100%;
+
       border: none;
+
       display: block;
     }
 
+
+    /* =========================
+       SAMPLE INFORMATION
+       ========================= */
+
     .sample-info {
+
       flex: 1;
+
       display: flex;
+
       flex-direction: column;
+
       justify-content: center;
+
       background: rgba(255, 255, 255, 0.08);
+
       padding: 1rem 1.5rem;
+
       border-radius: 12px;
+
       color: #eee;
+
       backdrop-filter: blur(12px);
+
+      -webkit-backdrop-filter: blur(12px);
+
       text-align: left;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+      box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.3);
+
       border-left: 6px solid var(--accent);
+
       min-width: 300px;
     }
 
+
     .sample-row.reverse .sample-info {
+
       border-left: none;
+
       border-right: 6px solid var(--accent);
     }
 
+
     .sample-info h3 {
+
       font-size: 1.6rem;
+
       color: var(--accent);
+
       margin-bottom: 0.5rem;
+
       font-weight: 700;
+
       letter-spacing: 0.02em;
     }
 
+
     .sample-info p {
+
       font-size: 1.1rem;
+
       color: #ddd;
+
       line-height: 1.4;
+
       font-weight: 500;
     }
 
+
+    /* =====================================================
+       FIFTH SAMPLE — FOUR VERTICAL SHORTS
+       ===================================================== */
+
+    .shorts-row {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 3rem;
+
+      width: 100%;
+    }
+
+
+    .shorts-grid {
+
+      flex: 0 0 65%;
+
+      height: 390px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 12px;
+
+      overflow: visible;
+
+      background: transparent;
+    }
+
+
+    .short-video {
+
+      position: relative;
+
+      height: 100%;
+
+      aspect-ratio: 9 / 16;
+
+      overflow: hidden;
+
+      border-radius: 10px;
+
+      background: #000;
+
+      box-shadow:
+        0 0 25px rgba(0, 0, 0, 0.6);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+
+    .short-video:hover {
+
+      transform: scale(1.04);
+
+      box-shadow:
+        0 0 35px var(--hover-glow);
+
+      z-index: 10;
+    }
+
+
+    .short-video iframe {
+
+      position: absolute;
+
+      width: 100%;
+
+      height: 100%;
+
+      left: 0;
+
+      top: 0;
+
+      border: none;
+
+      display: block;
+    }
+
+
+    .shorts-row .sample-info {
+
+      flex: 1;
+
+      min-width: 280px;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
     footer {
+
       text-align: center;
+
       padding: 3rem 1rem;
+
       color: #f3f3f3;
+
       font-size: 0.9rem;
     }
 
+
+    /* =========================
+       HIRE BUTTON
+       ========================= */
+
     .hire-btn {
+
       display: inline-block;
+
       margin-top: 0;
+
       background-color: #1d9bf0;
+
       color: #fff;
+
       font-weight: 600;
+
       text-decoration: none;
+
       padding: 0.75rem 1.75rem;
+
       border-radius: 999px;
-      transition: background-color 0.3s ease;
+
+      transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
     }
+
 
     .hire-btn:hover {
+
       background-color: #0c7bdc;
+
+      transform: translateY(-2px);
     }
 
-    /* Mobile Responsiveness */
-    @media (max-width: 950px) {
-      .sample-row,
-      .sample-row.reverse {
-        flex-direction: column;
+
+    /* =========================
+       EMAIL FALLBACK
+       ========================= */
+
+    .email-contact {
+
+      margin-top: 1.5rem;
+
+      font-size: 0.95rem;
+
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+
+    .email-contact a {
+
+      color: #b4ebff;
+
+      text-decoration: none;
+
+      font-weight: 600;
+
+      transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+    }
+
+
+    .email-contact a:hover {
+
+      color: #ffffff;
+
+      text-shadow:
+        0 0 10px rgba(180, 235, 255, 0.8);
+    }
+
+
+    /* =====================================================
+       TABLET / SMALL DESKTOP
+       ===================================================== */
+
+    @media (max-width: 1150px) {
+
+      .shorts-grid {
+
+        flex: 0 0 62%;
+
+        height: 330px;
+
+        gap: 8px;
+      }
+
+
+      .shorts-row {
+
         gap: 2rem;
       }
 
+
+      .shorts-row .sample-info {
+
+        min-width: 250px;
+      }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 950px) {
+
+      .sample-row,
+      .sample-row.reverse,
+      .shorts-row {
+
+        flex-direction: column;
+
+        gap: 2rem;
+      }
+
+
       .sample-video {
+
         width: 100%;
+
         flex: none;
       }
 
-      .sample-info {
+
+      .shorts-grid {
+
         width: 100%;
+
+        flex: none;
+
+        height: 360px;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+
+        padding: 0 10px;
+
+        scrollbar-width: thin;
+      }
+
+
+      .short-video {
+
+        flex: 0 0 auto;
+
+        height: 100%;
+
+        aspect-ratio: 9 / 16;
+      }
+
+
+      .sample-info {
+
+        width: 100%;
+
         text-align: center;
+
         border-left: 6px solid var(--accent) !important;
+
         border-right: none !important;
       }
+
     }
 
+
+    /* =====================================================
+       TABLET / PHONE
+       ===================================================== */
+
     @media (max-width: 768px) {
+
       header {
+
         padding: 3rem 5%;
+
         flex-direction: column;
+
         text-align: center;
       }
+
 
       .header-left {
+
         text-align: center;
       }
 
+
       .header-left h1 {
+
         font-size: 2.4rem;
       }
 
+
       .header-left h2 {
+
         font-size: 1.4rem;
+
         display: inline-block;
+
         margin: 0.5rem auto;
       }
 
+
       .header-left button {
+
         display: inline-block;
+
         margin: 1rem 0.5rem;
+
         padding: 0.75rem 1.5rem;
       }
 
+
       .profile-pic {
+
         margin-bottom: 2rem;
+
         width: 180px;
+
         height: 180px;
       }
 
+
       section {
+
         padding: 3rem 1rem;
       }
 
+
       h2.section-title {
+
         font-size: 2rem;
+
         margin-bottom: 2rem;
       }
 
+
       .sample-container {
+
         gap: 3rem;
       }
 
+
       .sample-info h3 {
+
         font-size: 1.4rem;
       }
 
+
       .sample-info p {
+
         font-size: 1rem;
       }
+
     }
 
+
+    /* =====================================================
+       SMALL PHONES
+       ===================================================== */
+
     @media (max-width: 480px) {
+
       .header-left h1 {
+
         font-size: 2rem;
       }
 
+
       .header-left h2 {
+
         font-size: 1.2rem;
       }
 
+
       .header-left button {
+
         padding: 0.6rem 1.2rem;
+
         font-size: 0.9rem;
       }
 
+
       .profile-pic {
+
         width: 150px;
+
         height: 150px;
       }
 
+
       h2.section-title {
+
         font-size: 1.8rem;
       }
 
+
       .sample-info {
+
         padding: 1rem;
       }
 
+
       .sample-info h3 {
+
         font-size: 1.3rem;
       }
 
+
       .sample-info p {
+
         font-size: 0.95rem;
       }
+
+
+      .shorts-grid {
+
+        height: 300px;
+
+        gap: 7px;
+      }
+
     }
+
   </style>
 </head>
+
+
 <body>
 
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
   <header>
+
+
     <div class="profile-pic">
-      <img src="profile.png" alt="Mohammad Hadi">
+
+      <img
+        src="profile.png"
+        alt="Mohammad Hadi">
+
     </div>
+
+
     <div class="header-left">
-      <h1>Hey, I Am Mohammad Hadi!</h1>
-      <h2>Professional Video Editor</h2>
-      <h2>Visual Storyteller</h2>
-      <button onclick="document.getElementById('videos').scrollIntoView({ behavior: 'smooth' });">
+
+
+      <h1>
+        Hey, I Am Mohammad Hadi!
+      </h1>
+
+
+      <h2>
+        Professional Video Editor
+      </h2>
+
+
+      <h2>
+        Visual Storyteller
+      </h2>
+
+
+      <button
+        onclick="document.getElementById('videos').scrollIntoView({ behavior: 'smooth' });">
+
         See My Work
+
       </button>
-      <button onclick="document.getElementById('hire').scrollIntoView({ behavior: 'smooth' });">
+
+
+      <button
+        onclick="document.getElementById('hire').scrollIntoView({ behavior: 'smooth' });">
+
         Hire Me
+
       </button>
+
+
     </div>
+
+
   </header>
 
+
+
+  <!-- =====================================================
+       SAMPLE WORKS
+       ===================================================== -->
+
   <section id="videos">
-    <h2 class="section-title">Sample Works</h2>
+
+
+    <h2 class="section-title">
+      Sample Works
+    </h2>
+
+
     <div class="sample-container">
 
-      <div class="sample-row">
-        <div class="sample-video">
-          <iframe src="https://www.youtube.com/embed/K-QS3K5lpLA" allowfullscreen></iframe>
-        </div>
-        <div class="sample-info">
-          <h3>Faceless Documentry Style Edit</h3>
-          <p>Made 100% in Premiere</p>
-        </div>
-      </div>
 
-      <div class="sample-row reverse">
-        <div class="sample-video">
-          <iframe src="https://www.youtube.com/embed/vyUpUSiFBwQ?si=BJO9SOjvvhN_BHQb" allowfullscreen></iframe> 
-        </div>
-        <div class="sample-info">
-          <h3>Documentry videos on SunnyV2 style</h3>
-          <p>Celebrities niche</p>
-        </div>
-      </div>
+      <!-- =================================================
+           SAMPLE 1
+           ================================================= -->
 
       <div class="sample-row">
+
+
         <div class="sample-video">
-          <iframe src="https://www.youtube.com/embed/IPIfispqij4" allowfullscreen></iframe>
+
+          <iframe
+            src="https://www.youtube.com/embed/K-QS3K5lpLA"
+            allowfullscreen>
+          </iframe>
+
         </div>
+
+
         <div class="sample-info">
-          <h3>Gaming Videos</h3>
-          <p>Smooth Motion Is The Priority</p>
+
+          <h3>
+            Faceless Documentry Style Edit
+          </h3>
+
+          <p>
+            Made 100% in Premiere
+          </p>
+
         </div>
+
+
       </div>
 
+
+
+      <!-- =================================================
+           SAMPLE 2
+           ================================================= -->
+
       <div class="sample-row reverse">
+
+
         <div class="sample-video">
-          <iframe src="https://www.youtube.com/embed/-8dVIpI9Gu0" allowfullscreen></iframe>
+
+          <iframe
+            src="https://www.youtube.com/embed/vyUpUSiFBwQ?si=BJO9SOjvvhN_BHQb"
+            allowfullscreen>
+          </iframe>
+
         </div>
+
+
         <div class="sample-info">
-          <h3>YouTube Video Remake</h3>
-          <p>Give Your Videos A New Identity!</p>
+
+          <h3>
+            Documentry videos on SunnyV2 style
+          </h3>
+
+          <p>
+            Celebrities niche
+          </p>
+
         </div>
+
+
       </div>
+
+
+
+      <!-- =================================================
+           SAMPLE 3
+           ================================================= -->
+
+      <div class="sample-row">
+
+
+        <div class="sample-video">
+
+          <iframe
+            src="https://www.youtube.com/embed/IPIfispqij4"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+
+        <div class="sample-info">
+
+          <h3>
+            Gaming Videos
+          </h3>
+
+          <p>
+            Smooth Motion Is The Priority
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- =================================================
+           SAMPLE 4
+           ================================================= -->
+
+      <div class="sample-row reverse">
+
+
+        <div class="sample-video">
+
+          <iframe
+            src="https://www.youtube.com/embed/-8dVIpI9Gu0"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+
+        <div class="sample-info">
+
+          <h3>
+            YouTube Video Remake
+          </h3>
+
+          <p>
+            Give Your Videos A New Identity!
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- =================================================
+           SAMPLE 5 — FOUR VERTICAL SHORTS
+           ================================================= -->
+
+      <div class="shorts-row">
+
+
+        <div class="shorts-grid">
+
+
+          <!-- SHORT 1 -->
+
+          <div class="short-video">
+
+            <iframe
+              src="https://www.youtube.com/embed/QKtDu4FweqY"
+              allowfullscreen>
+            </iframe>
+
+          </div>
+
+
+          <!-- SHORT 2 -->
+
+          <div class="short-video">
+
+            <iframe
+              src="https://www.youtube.com/embed/SHORT_VIDEO_ID_2"
+              allowfullscreen>
+            </iframe>
+
+          </div>
+
+
+          <!-- SHORT 3 -->
+
+          <div class="short-video">
+
+            <iframe
+              src="https://www.youtube.com/embed/SHORT_VIDEO_ID_3"
+              allowfullscreen>
+            </iframe>
+
+          </div>
+
+
+          <!-- SHORT 4 -->
+
+          <div class="short-video">
+
+            <iframe
+              src="https://www.youtube.com/embed/SHORT_VIDEO_ID_4"
+              allowfullscreen>
+            </iframe>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="sample-info">
+
+          <h3>
+            Short Form Videos
+          </h3>
+
+          <p>
+            Engaging short-form content designed for maximum impact.
+          </p>
+
+        </div>
+
+
+      </div>
+
 
     </div>
+
+
   </section>
+
+
+
+  <!-- =====================================================
+       HIRE ME
+       ===================================================== -->
 
   <section id="hire">
-    <h2 class="section-title">How to Hire Me :)</h2>
-    <div style="
-      text-align: center;
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-      color: rgba(255, 255, 255, 0.85);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    ">
-      <p>Send Me A Message, My DMs Are Open.</p>
-      <img src="X logo.png" alt="X Logo" style="width: 100px; height: 100px; margin-top: 2rem; margin-bottom: 1rem;" />
-      <a href="https://x.com/hadi_VidEditor" target="_blank" class="hire-btn">
+
+
+    <h2 class="section-title">
+      How to Hire Me :)
+    </h2>
+
+
+    <div
+      style="
+        text-align: center;
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        color: rgba(255, 255, 255, 0.85);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      "
+    >
+
+
+      <p>
+        Send Me A Message, My DMs Are Open.
+      </p>
+
+
+      <!-- =========================
+           PRIMARY CONTACT — X
+           ========================= -->
+
+      <img
+        src="X logo.png"
+        alt="X Logo"
+        style="
+          width: 100px;
+          height: 100px;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+        "
+      />
+
+
+      <a
+        href="https://x.com/hadi_VidEditor"
+        target="_blank"
+        class="hire-btn">
+
         Message Me on X
+
       </a>
+
+
+      <!-- =========================
+           SECONDARY CONTACT — EMAIL
+           ========================= -->
+
+      <div class="email-contact">
+
+        Or email me at
+
+        <a href="mailto:mohammadhadieskandari8@gmail.com">
+          mohammadhadieskandari8@gmail.com
+        </a>
+
+      </div>
+
+
     </div>
+
+
   </section>
 
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
   <footer>
+
     &copy; 2025 Mohammad Hadi. All rights reserved.
+
   </footer>
+
 
 </body>
 </html>
